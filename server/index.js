@@ -8,11 +8,9 @@ const socket = require('socket.io');
 const app = express();
 app.use(cors());
 app.use(express.json());
-const PORT = process.env.PORT;
-const MONGO_URL = process.env.MONGO_URL;
 
 mongoose
-  .connect(MONGO_URL, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -26,8 +24,8 @@ mongoose
 app.use('/api/auth', userRoutes);
 app.use('/api/messages', messageRoutes);
 
-const server = app.listen(PORT, () => {
-  console.log(`Server Started On Port ${PORT}`);
+const server = app.listen(process.env.PORT, () => {
+  console.log(`Server Started On Port ${process.env.PORT}`);
 });
 
 const io = socket(server, {
