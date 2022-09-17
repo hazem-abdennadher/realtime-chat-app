@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Routes>
-        <Route path="https://chatdotio.netlify.app/" element={<Chat />} />
+        <Route path="https://chatdotio.netlify.app" element={<Chat />} />
         <Route
           path="https://chatdotio.netlify.app/avatar"
           element={<Avatar />}
