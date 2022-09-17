@@ -9,10 +9,16 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<Chat />} />
-        <Route path="/avatar" element={<Avatar />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="https://chatdotio.netlify.app/" element={<Chat />} />
+        <Route
+          path="https://chatdotio.netlify.app/avatar"
+          element={<Avatar />}
+        />
+        <Route
+          path="https://chatdotio.netlify.app/register"
+          element={<Register />}
+        />
+        <Route path="https://chatdotio.netlify.app/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
