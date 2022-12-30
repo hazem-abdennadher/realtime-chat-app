@@ -4,15 +4,18 @@ services:
     build: ./server
     container_name: server
     ports:
-      - '3001:3001'
+      - '8081:8080'
     volumes:
       - ./server:/app
       - /app/node_modules
   client:
     build: ./client
     container_name: client
+    environment:
+      - MONGO_URL=$MONGO_URL
+      - PORT=$PORT
     ports:
-      - '3000:3000'
+      - '80:80'
     volumes:
       - ./client:/app
       - /app/node_modules
